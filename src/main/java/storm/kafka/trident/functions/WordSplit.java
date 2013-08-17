@@ -11,7 +11,7 @@ public class WordSplit extends BaseFunction {
 		if (sentence != null) {
 			sentence = sentence.replaceAll("\r", "");
 			sentence = sentence.replaceAll("\n", "");
-			for(String word: sentence.split(" ")) {
+			for (String word : sentence.split(" ")) {
 				collector.emit(new Values(word));
 			}
 		}

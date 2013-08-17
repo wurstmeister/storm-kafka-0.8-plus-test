@@ -58,7 +58,7 @@ public class SentenceAggregationTopology {
 			config.setMaxTaskParallelism(2);
 			LocalCluster cluster = new LocalCluster();
 			cluster.submitTopology("kafka", config, topology.build());
-			while(true) {
+			while (true) {
 				System.out.println("Word count: " + drpc.execute("words", "the"));
 				Utils.sleep(1000);
 			}

@@ -13,19 +13,19 @@ import storm.kafka.*;
 public class TestTopologyStaticHosts {
 
 
-    public static class PrinterBolt extends BaseBasicBolt {
-        @Override
-        public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        }
+	public static class PrinterBolt extends BaseBasicBolt {
+		@Override
+		public void declareOutputFields(OutputFieldsDeclarer declarer) {
+		}
 
-        @Override
-        public void execute(Tuple tuple, BasicOutputCollector collector) {
-            System.out.println(tuple.toString());
-        }
-        
-    }
-    
-    public static void main(String [] args) throws Exception {
+		@Override
+		public void execute(Tuple tuple, BasicOutputCollector collector) {
+			System.out.println(tuple.toString());
+		}
+
+	}
+
+	public static void main(String[] args) throws Exception {
 
 		GlobalPartitionInformation hostsAndPartitions = new GlobalPartitionInformation();
 		hostsAndPartitions.addPartition(0, new HostPort("localhost", 9092));
@@ -38,10 +38,10 @@ public class TestTopologyStaticHosts {
 		builder.setSpout("words", new KafkaSpout(kafkaConfig), 10);
 		builder.setBolt("print", new PrinterBolt()).shuffleGrouping("words");
 		LocalCluster cluster = new LocalCluster();
-        Config config = new Config();
-        cluster.submitTopology("kafka-test", config, builder.createTopology());
+		Config config = new Config();
+		cluster.submitTopology("kafka-test", config, builder.createTopology());
 
-        Thread.sleep(600000);
+		Thread.sleep(600000);
 
-    }
+	}
 }

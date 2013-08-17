@@ -15,12 +15,12 @@ public class HazelCastState<T> implements IBackingMap<TransactionalValue<Long>> 
 	private HazelCastHandler handler;
 
 
-	public HazelCastState(HazelCastHandler handler){
+	public HazelCastState(HazelCastHandler handler) {
 		this.handler = handler;
 	}
 
-	public void addKeyValue(String key, Long value){
-		Map<String,Long> state = handler.getState();
+	public void addKeyValue(String key, Long value) {
+		Map<String, Long> state = handler.getState();
 		state.put(key, value);
 	}
 

@@ -25,7 +25,7 @@ public class StormProducer {
 		ProducerConfig config = new ProducerConfig(props);
 		Producer<String, String> producer = new Producer<String, String>(config);
 
-		while(true) {
+		while (true) {
 			for (String sentence : sentences) {
 				KeyedMessage<String, String> data = new KeyedMessage<String, String>("storm-sentence", sentence);
 				producer.send(data);

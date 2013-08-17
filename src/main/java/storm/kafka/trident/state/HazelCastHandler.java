@@ -10,7 +10,7 @@ public class HazelCastHandler implements Serializable {
 	private transient Map<String, Long> state;
 
 	public Map<String, Long> getState() {
-		if ( state == null ) {
+		if (state == null) {
 			state = Hazelcast.newHazelcastInstance().getMap("state");
 		}
 		return state;
