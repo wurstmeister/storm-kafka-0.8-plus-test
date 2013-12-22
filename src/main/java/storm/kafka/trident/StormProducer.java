@@ -16,10 +16,10 @@ public class StormProducer {
 			"how many apples can you eat",
 	};
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws InterruptedException {
 		Properties props = new Properties();
 
-		props.put("metadata.broker.list", "localhost:9092");
+		props.put("metadata.broker.list",args[0]);
 		props.put("serializer.class", "kafka.serializer.StringEncoder");
 		props.put("request.required.acks", "1");
 		ProducerConfig config = new ProducerConfig(props);
@@ -29,6 +29,7 @@ public class StormProducer {
 			for (String sentence : sentences) {
 				KeyedMessage<String, String> data = new KeyedMessage<String, String>("storm-sentence", sentence);
 				producer.send(data);
+				Thread.sleep(10);
 			}
 		}
 
