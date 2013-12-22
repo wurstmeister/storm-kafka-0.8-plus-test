@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class HazelCastHandler implements Serializable {
 
-	private transient Map<String, Long> state;
+    private transient Map<String, Long> state;
 
-	public Map<String, Long> getState() {
-		if (state == null) {
-			state = Hazelcast.newHazelcastInstance().getMap("state");
-		}
-		return state;
-	}
+    public Map<String, Long> getState() {
+        if (state == null) {
+            state = Hazelcast.newHazelcastInstance().getMap("state");
+        }
+        return state;
+    }
 }

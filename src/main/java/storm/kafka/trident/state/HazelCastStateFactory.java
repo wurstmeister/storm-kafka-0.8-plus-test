@@ -10,8 +10,8 @@ import java.util.Map;
 public class HazelCastStateFactory implements StateFactory {
 
 
-	@Override
-	public State makeState(Map conf, IMetricsContext metrics, int partitionIndex, int numPartitions) {
-		return TransactionalMap.build(new HazelCastState(new HazelCastHandler()));
-	}
+    @Override
+    public State makeState(Map conf, IMetricsContext metrics, int partitionIndex, int numPartitions) {
+        return TransactionalMap.build(new HazelCastState(new HazelCastHandler()));
+    }
 }

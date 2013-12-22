@@ -6,14 +6,14 @@ import storm.trident.operation.TridentCollector;
 import storm.trident.tuple.TridentTuple;
 
 public class WordSplit extends BaseFunction {
-	public void execute(TridentTuple tuple, TridentCollector collector) {
-		String sentence = (String) tuple.getValue(0);
-		if (sentence != null) {
-			sentence = sentence.replaceAll("\r", "");
-			sentence = sentence.replaceAll("\n", "");
-			for (String word : sentence.split(" ")) {
-				collector.emit(new Values(word));
-			}
-		}
-	}
+    public void execute(TridentTuple tuple, TridentCollector collector) {
+        String sentence = (String) tuple.getValue(0);
+        if (sentence != null) {
+            sentence = sentence.replaceAll("\r", "");
+            sentence = sentence.replaceAll("\n", "");
+            for (String word : sentence.split(" ")) {
+                collector.emit(new Values(word));
+            }
+        }
+    }
 }

@@ -70,8 +70,8 @@ public class SentenceAggregationTopology {
             config.setNumWorkers(2);
             config.setMaxTaskParallelism(5);
             config.put(Config.NIMBUS_HOST, dockerIp);
-            config.put(Config.NIMBUS_THRIFT_PORT,49627);
-            config.put(Config.STORM_ZOOKEEPER_PORT,49181);
+            config.put(Config.NIMBUS_THRIFT_PORT, 49627);
+            config.put(Config.STORM_ZOOKEEPER_PORT, 49181);
             config.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList(dockerIp));
             StormSubmitter.submitTopology(name, config, sentenceAggregationTopology.buildTopology());
         } else {
