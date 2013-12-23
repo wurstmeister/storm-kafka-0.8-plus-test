@@ -15,7 +15,7 @@ Also contains an attempt at a sample implementation of trident state based on [H
 
 ```mvn clean package```
 
-##Build for running on a Strom cluster:
+##Build for running on a Storm cluster:
 
 ```mvn clean package -P cluster```
 
