@@ -1,4 +1,4 @@
-package storm.kafka.trident;
+package storm.kafka.tools;
 
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;

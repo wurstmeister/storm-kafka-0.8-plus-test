@@ -12,7 +12,7 @@
         <dependency>
             <groupId>net.wurstmeister.storm</groupId>
             <artifactId>storm-kafka-0.8-plus</artifactId>
-            <version>0.2.0</version>
+            <version>0.3.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.hazelcast</groupId>

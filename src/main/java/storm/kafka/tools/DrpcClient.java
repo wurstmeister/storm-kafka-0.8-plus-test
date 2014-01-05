@@ -1,4 +1,4 @@
-package storm.kafka.trident;
+package storm.kafka.tools;
 
 import backtype.storm.generated.DRPCExecutionException;
 import backtype.storm.utils.DRPCClient;

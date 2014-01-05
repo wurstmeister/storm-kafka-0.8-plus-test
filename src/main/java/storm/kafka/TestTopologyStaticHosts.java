@@ -1,4 +1,4 @@
-package storm.kafka.trident;
+package storm.kafka;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
@@ -8,9 +8,9 @@ import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.tuple.Tuple;
-import storm.kafka.*;
+import storm.kafka.trident.GlobalPartitionInformation;
 
-public class TestTopology {
+public class TestTopologyStaticHosts {
 
 
     public static class PrinterBolt extends BaseBasicBolt {
@@ -27,7 +27,9 @@ public class TestTopology {
 
     public static void main(String[] args) throws Exception {
 
-        BrokerHosts brokerHosts = new ZkHosts("localhost");
+        GlobalPartitionInformation hostsAndPartitions = new GlobalPartitionInformation();
+        hostsAndPartitions.addPartition(0, new Broker("localhost", 9092));
+        BrokerHosts brokerHosts = new StaticHosts(hostsAndPartitions);
 
         SpoutConfig kafkaConfig = new SpoutConfig(brokerHosts, "storm-sentence", "", "storm");
         kafkaConfig.scheme = new SchemeAsMultiScheme(new StringScheme());

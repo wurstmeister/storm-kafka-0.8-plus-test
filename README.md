@@ -30,8 +30,8 @@ The tests are using a topic called "storm-sentence", it can be created using:
 There are 3 test topologies:
 
 - ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper>```
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.TestTopology```
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.TestTopologyStaticHosts```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper>```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.TestTopologyStaticHosts```
 
 ##Running the test topologies on a storm cluster
 
@@ -48,10 +48,10 @@ The Logviewer will be available under: ```http://<dockerIp>:49000/``` e.g. ```ht
 
 To feed the topologies with data, start the StormProducer (built in local mode)
 
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.StormProducer <kafkaIp>:9092```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.StormProducer <kafkaIp>:9092```
 
 ##Consuming data
 
 To run a DRPC query, start the DrpcClient (built in local mode)
 
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.DrpcClient <dockerIp> 49772```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.DrpcClient <dockerIp> 49772```
