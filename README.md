@@ -45,7 +45,7 @@ Make sure you forward all ports from your vagrant environment: ```$ FORWARD_DOCK
 
 
 - ```storm jar target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper> sentences <dockerIp>```
-- ```storm jar target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.KafkaSpoutTestTopology <kafkaZookeeper> sentences <dockerIp>```
+- ```storm jar target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper> sentences <dockerIp>```
 
 The Storm UI will be available under: ```http://<dockerIp>:49080/```
 
