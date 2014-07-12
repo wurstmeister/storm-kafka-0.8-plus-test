@@ -13,17 +13,18 @@ Also contains an attempt at a sample implementation of trident state based on [H
 
 ##Environment setup with [Docker](https://www.docker.io/)
 
-If you are using a Mac follow the instructions [here](http://docs.docker.io/en/latest/installation/vagrant/) to setup a docker environment.
-Make sure you forward all ports from your vagrant environment: ```$ FORWARD_DOCKER_PORTS='true' vagrant up```
+If you are using a Mac follow the instructions [here](https://docs.docker.com/installation/mac/) to setup a docker environment.
 
-- Start a broker
-    - ```start-broker.sh <brokerId> <port> <hostIp>```
+Install fig [http://orchardup.github.io/fig/install.html](http://orchardup.github.io/fig/install.html)
+
+
+- Start the test environment
+    - ```fig up```
 - Start a kafka shell
     - ```start-kafka-shell.sh```
 - From within the shell, create a topic
     - ```$KAFKA_HOME/bin/kafka-topics.sh --create --topic storm-sentence --partitions 2 --zookeeper $ZK_PORT_2181_TCP_ADDR --replication-factor 1```
-- Start a Storm cluster
-    - ```start-storm.sh```
+
 - For more details and troubleshooting see [https://github.com/wurstmeister/kafka-docker](https://github.com/wurstmeister/kafka-docker) and [https://github.com/wurstmeister/storm-docker](https://github.com/wurstmeister/storm-docker)
 
 
