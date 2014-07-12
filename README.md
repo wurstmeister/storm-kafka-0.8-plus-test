@@ -15,8 +15,9 @@ Also contains an attempt at a sample implementation of trident state based on [H
 
 If you are using a Mac follow the instructions [here](https://docs.docker.com/installation/mac/) to setup a docker environment.
 
-Install [fig](http://orchardup.github.io/fig/install.html)
+- Install [fig](http://orchardup.github.io/fig/install.html)
 
+- Install [storm](https://storm.incubator.apache.org/downloads.html) (so you can upload your topology to the test cluster)
 
 - Start the test environment
     - ```fig up```
@@ -48,9 +49,9 @@ Install [fig](http://orchardup.github.io/fig/install.html)
 - ```storm jar target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper> sentences <dockerIp>```
 - ```storm jar target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper> sentences <dockerIp>```
 
-The Storm UI will be available under: ```http://<dockerIp>:49080/```
+The Storm UI will be available under: ```http://<dockerIp>:8080/```
 
-The Logviewer will be available under: ```http://<dockerIp>:49000/``` e.g. ```http://<dockerIp>:49000/log?file=supervisor.log```
+The Logviewer will be available under: ```http://<dockerIp>:8000/``` e.g. ```http://<dockerIp>:8000/log?file=supervisor.log```
 
 ##Producing data
 
