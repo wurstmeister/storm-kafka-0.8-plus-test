@@ -67,4 +67,4 @@ Alternatively use the kafka console producer from within the kafka shell (see ab
 
 To run a DRPC query, start the DrpcClient (built in local mode)
 
-- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.DrpcClient <dockerIp> 49772```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.DrpcClient <dockerIp> 3772```
