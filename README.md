@@ -15,7 +15,7 @@ Also contains an attempt at a sample implementation of trident state based on [H
 
 If you are using a Mac follow the instructions [here](https://docs.docker.com/installation/mac/) to setup a docker environment.
 
-Install fig [http://orchardup.github.io/fig/install.html](http://orchardup.github.io/fig/install.html)
+Install [fig](http://orchardup.github.io/fig/install.html)
 
 
 - Start the test environment
