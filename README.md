@@ -38,15 +38,15 @@ Install fig [http://orchardup.github.io/fig/install.html](http://orchardup.githu
 
 ##Running the test topologies locally
 
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper>```
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper>```
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.TestTopologyStaticHosts```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper>```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper>```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.TestTopologyStaticHosts```
 
 ##Running the test topologies on a storm cluster
 
 
-- ```storm jar target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper> sentences <dockerIp>```
-- ```storm jar target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper> sentences <dockerIp>```
+- ```storm jar target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.trident.SentenceAggregationTopology <kafkaZookeeper> sentences <dockerIp>```
+- ```storm jar target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.KafkaSpoutTestTopology <kafkaZookeeper> sentences <dockerIp>```
 
 The Storm UI will be available under: ```http://<dockerIp>:49080/```
 
@@ -56,7 +56,7 @@ The Logviewer will be available under: ```http://<dockerIp>:49000/``` e.g. ```ht
 
 To feed the topologies with data, start the StormProducer (built in local mode)
 
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.StormProducer <dockerIp>:<kafkaPort>```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.StormProducer <dockerIp>:<kafkaPort>```
 
 Alternatively use the kafka console producer from within the kafka shell (see above)
 
@@ -66,4 +66,4 @@ Alternatively use the kafka console producer from within the kafka shell (see ab
 
 To run a DRPC query, start the DrpcClient (built in local mode)
 
-- ```java -cp target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.DrpcClient <dockerIp> 49772```
+- ```java -cp target/storm-kafka-0.8-plus-test-0.2.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.tools.DrpcClient <dockerIp> 49772```
