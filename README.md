@@ -22,9 +22,9 @@ If you are using a Mac follow the instructions [here](https://docs.docker.com/in
 - Start the test environment
     - ```fig up```
 - Start a kafka shell
-    - ```start-kafka-shell.sh```
+    - ```start-kafka-shell.sh <Docker Ip> <Zookeeper>```
 - From within the shell, create a topic
-    - ```$KAFKA_HOME/bin/kafka-topics.sh --create --topic storm-sentence --partitions 2 --zookeeper $ZK_PORT_2181_TCP_ADDR --replication-factor 1```
+    - ```$KAFKA_HOME/bin/kafka-topics.sh --create --topic storm-sentence --partitions 2 --zookeeper $ZK --replication-factor 1```
 
 - For more details and troubleshooting see [https://github.com/wurstmeister/kafka-docker](https://github.com/wurstmeister/kafka-docker) and [https://github.com/wurstmeister/storm-docker](https://github.com/wurstmeister/storm-docker)
 
